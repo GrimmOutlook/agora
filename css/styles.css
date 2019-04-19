@@ -20,11 +20,9 @@ body {
     line-height: 1.5;
     letter-spacing: normal;
     font-size: 2rem;
-}
-
-a {
-    /* text-decoration: none; */
-    color: inherit;
+    /* max-width: 114rem; */
+    /* margin: 0 auto; */
+    /* background-color: black; */
 }
 
 ul {
@@ -40,33 +38,51 @@ p {
     font-style: italic;
 }
 
+@keyframes moveInFromLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-25rem);
+    }
+    80% {
+      transform: translateX(2.5rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0);
+    }
+}
+
 .hero {
-    background: center / cover no-repeat url('../img/HeadlineImage_1.jpg');
-    background-size: 108%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.header__text-container {
+    background: center / cover no-repeat url('https://d13p2xj50zkyqm.cloudfront.net/promos/health/GLN/masterswitch_chocolateRL_ihtml_0317/HeadlineImage_1.jpg');
     height: 53rem;
 }
 
-.text__header-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 3rem;
-}
-
-.header__text {
+.header__text-1,
+.header__text-2,
+.header__text-3 {
     color: white;
     font-size: 4.2rem;
+    text-align: center;
+}
+
+.header__text-1 {
+    padding-top: 3rem;
 }
 
 .gradient__text {
     color: red;
     font-size: 8rem;
     line-height: 1.65;
-    letter-spacing: 0.75px;
+    letter-spacing: -5px;
     width: 100%;
     text-align: center;
     background: linear-gradient(90deg, rgba(255,255,255,0), rgba(255,255,255,1) 50%,  rgba(255,255,255,0) 100%);
+    animation: moveInFromLeft 1s ease-in-out;
 }
 
 .chocolate > p {
@@ -74,7 +90,7 @@ p {
     width: 80%;
 }
 
-.choco__img {
+.choco__container {
     background: linear-gradient(90deg, rgba(196,154,108,0), rgba(195,155,124,1) 50%,  rgba(196,154,108,0) 100%);
     display: flex;
     align-items: center;
@@ -94,9 +110,11 @@ p {
 }
 
 .old__man {
-    background: center / cover no-repeat url('../img/ParallaxOne_5.jpg');
+    background: center / cover no-repeat url('https://d13p2xj50zkyqm.cloudfront.net/promos/health/GLN/masterswitch_chocolateRL_ihtml_0317/ParallaxOne_5.jpg');
+    background-attachment: fixed;
+    /* background-position: -8rem; */
     padding-left: 10rem;
-    height: 35rem;
+    /* height: 35rem; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -104,12 +122,18 @@ p {
 
 .old__man h1 {
     font-size: 4.8rem;
+    padding-top: 9rem;
+}
+
+.old__man p {
+    padding-bottom: 6rem;
 }
 
 .old__man h1,
 .old__man p {
     color: white;
     padding-left: 0;
+    text-shadow: 2px 2px 2px #6D5D4B;
 }
 
 .doctor {
@@ -122,14 +146,13 @@ p {
     padding-left: 4rem;
 }
 
-.text__doctor {
-    /* background-color: #3d1c0f; */
+.doctor__text {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-.text__doctor p {
+.doctor__text p {
     color: white;
     line-height: 3.5rem;
     padding: 3rem 3rem 3rem 5rem;
@@ -142,9 +165,9 @@ p {
 }
 
 .gears {
-    height: 55rem;
-    background: right / 130% no-repeat url('../img/Gears_15.jpg');
-    background-position: 80rem -105rem;
+    background: right / 130% no-repeat url('https://d13p2xj50zkyqm.cloudfront.net/promos/health/GLN/masterswitch_chocolateRL_ihtml_0317/Gears_15.jpg');
+    background-position: 70rem -90rem;
+    background-attachment: fixed;
     background-color: #A41F25;
     padding: 2.5rem 0;
     margin-bottom: 5rem;
@@ -168,34 +191,21 @@ p {
     padding-left: 3rem;
 }
 
-.bottle__small {
+.bottle__small,
+.bottle__small-outer {
     max-width: 100%;
-    /* height: auto; */
     height: 27rem;
 }
 
 .final {
-    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1) 25%,  rgba(255,255,255,0) 100%), center / cover no-repeat url('../img/TransparentArrowBkgd.jpg');
-    /* background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1) 50%,  rgba(255,255,255,0) 100%); */
+    background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1) 25%,  rgba(255,255,255,0) 100%), center / cover no-repeat url('https://d13p2xj50zkyqm.cloudfront.net/promos/health/GLN/masterswitch_chocolateRL_ihtml_0317/TransparentArrowBkgd.jpg');
 }
 
-/* .final::after {
-    background-image: url('../img/TransparentArrow2.png');
-} */
-
 .photo__overlay {
-    /* background: linear-gradient(rgba(255,255,255,1), rgba(255,255,255,1) 50%,  rgba(255,255,255,0) 100%); */
-    /* background: rgba(255,255,255,1); */
-    /* opacity: 0.2; */
     width: 80%;
     background-color: rgba(255,255,255,0.88);
     margin: 0 auto;
-    /* padding: 0 10rem; */
 }
-
-/* .photo__overlay h1 {
-    padding-left: 15rem;
-} */
 
 .photo__overlay h1,
 .photo__overlay p {
@@ -225,14 +235,14 @@ p {
     justify-content: space-around;
 }
 
-.order__button {
+.order__text-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
 }
 
-.text__order-small {
+.order__text-small {
     color: white;
     text-align: center;
     line-height: 4rem;
@@ -240,7 +250,7 @@ p {
     font-size: 1.8rem;
 }
 
-.text__order-large {
+.order__text-large {
     color: #F9D63F;
     text-align: center;
     line-height: 14rem;
@@ -249,7 +259,7 @@ p {
     letter-spacing: -8px;
 }
 
-.text__order-medium {
+.order__text-medium {
     color: white;
     text-align: center;
     line-height: 7rem;
@@ -263,7 +273,7 @@ p {
     margin: 0 auto;
 }
 
-.bottom__button {
+.bottom__section {
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
@@ -275,6 +285,22 @@ p {
     background-color: #E47E25;
     border: 5px solid white;
     padding: 1rem 5rem;
+}
+
+.btn:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover::after {
+    transform: scaleX(1.2) scaleY(1.6);
+    opacity: 0;
+}
+
+.btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
 }
 
 .cart__button div:first-of-type {
@@ -289,10 +315,18 @@ p {
     font-weight: bold;
 }
 
-.bottom__button a {
+.bottom__section a {
     color: #2BB673;
     text-decoration: underline;
     margin: 1rem 0;
+}
+
+.bottom__section a:hover {
+    cursor: pointer;
+    background-color: #2BB673;
+    color: #fff;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
 }
 
 .disclaimer {
@@ -302,6 +336,137 @@ p {
     font-size: 1.2rem;
 }
 
-/* * {
-    border: 1px solid red;
-} */
+@media only screen and (max-width: 991px) {
+    .doctor {
+        flex-direction: column;
+        margin: 0 0 5rem;
+    }
+
+    .doctor img {
+        margin-top: 3rem;
+    }
+
+    .doctor__text p {
+        padding: 2rem 3rem 3rem 5rem;
+    }
+
+    .gears {
+        background-position: 50rem -45rem;
+    }
+
+    .bottle__small-outer {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    p {
+        padding-left: 10rem;
+        line-height: 4.5rem;
+    }
+
+    .text__header-container {
+        padding-top: 8rem;
+    }
+
+    .header__text-1,
+    .header__text-2,
+    .header__text-3 {
+        font-size: 3rem;
+    }
+
+    .header__text-1 {
+        padding-top: 1.5rem;
+    }
+
+    .gradient__text {
+        font-size: 5rem;
+        line-height: 1.25;
+        letter-spacing: -2px;
+        background: none;
+    }
+
+    .gears {
+        background-position: 35rem;
+    }
+
+    .gears > h1 {
+        padding-left: 10rem;
+    }
+
+    .bottle__small {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    p {
+        padding-left: 5rem;
+        line-height: 3.5rem;
+        margin: 1rem 0;
+    }
+
+    .choco__container {
+        background: linear-gradient( rgba(196,154,108,0), rgba(195,155,124,1) 50%,  rgba(196,154,108,0) 100%);
+    }
+
+    .text__header-container {
+        padding: 5rem 2rem;
+    }
+
+    .old__man {
+        padding-left: 5rem;
+        padding-right: 3rem;
+    }
+
+    .old__man h1 {
+        font-size: 3.2rem;
+        padding-top: 6rem;
+    }
+
+    .old__man p {
+        padding-bottom: 4rem;
+    }
+
+    .doctor {
+        padding: 0;
+        margin: 0 auto 2rem;
+    }
+
+    .doctor img {
+        width: 100%;
+        height: auto;
+    }
+
+    .gears {
+        background-position: 20rem;
+    }
+
+    .gears > h1 {
+        color: #FFCD2F;
+        padding-left: 5rem;
+        margin: 2rem 0;
+    }
+
+    .img__arrow {
+        margin: -1rem auto 0;
+    }
+
+    .bottom__section {
+        margin-top: 4rem;
+    }
+
+    .cart__button {
+        border: 3px solid white;
+        padding: 1rem 3rem;
+        width: 90%;
+    }
+
+    .cart__button div:first-of-type {
+        font-size: 3.2rem;
+    }
+
+    .cart__button div:nth-of-type(2) {
+        font-size: 1.2rem;
+    }
+}
